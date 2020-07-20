@@ -14,7 +14,7 @@
       text-decoration: none;
       color: $white;
     }
-    
+
     img {
       filter: saturate(0);
       -webkit-filter: saturate(0);
@@ -27,6 +27,7 @@
       img {
         filter: saturate(1);
         -webkit-filter: saturate(1);
+        
       }
       div {
         top: 0px;
@@ -34,7 +35,7 @@
     }
   }
 
-  @media (max-width: $desktopBreakpoint) {
+  @media (hover: none) {
     flex-direction: column;
     margin: 0;
 
@@ -46,8 +47,20 @@
         filter: saturate(1);
       }
     }
+  }
 
-    
+  @media (max-width: 50rem) {
+    flex-direction: column;
+    margin: 0;
+
+    li {
+      width: 100%;
+      margin: 0;
+
+      img {
+        filter: saturate(1);
+      }
+    }
   }
 }
 
@@ -59,7 +72,7 @@
   position: relative;
   background: $black;
   padding: 1rem 0 2rem 0;
-  top: -20rem;
+  top: -17rem;
   margin-bottom: -5rem;
   z-index: -1;
   transition-duration: 0.4s;
@@ -74,7 +87,12 @@
     font-size: $xsmall;
   }
 
-  @media (max-width: $desktopBreakpoint) {
+  @media (max-width: 50rem) {
+    top: 0;
+    margin-bottom: 1rem;
+  }
+
+  @media (hover: none) {
     top: 0;
     margin-bottom: 1rem;
   }
