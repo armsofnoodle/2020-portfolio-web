@@ -14,7 +14,6 @@ const Footer = () => {
       }
     }
   `)
-    console.log(data)
   return (
     <footer className={footerStyles.footer}>
       <div>{`© ${new Date().getFullYear()}, ${data.sanitySocials.title}`}</div>

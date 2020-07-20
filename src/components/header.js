@@ -8,7 +8,6 @@ const Header = () => {
 
   const menuClicked = () => {
     setOpen(!open)
-    console.log(open)
   }
 
   return (
@@ -21,10 +20,10 @@ const Header = () => {
         
       <ul className={headerStyles.list}>
           <li>
-            <Link to="/">Me</Link>
+            <Link to="/" onClick={menuClicked}>Me</Link>
           </li>
           <li>
-            <Link to="/work">Work</Link>
+            <Link to="/work" onClick={menuClicked}>Work</Link>
           </li>
         </ul>
         
