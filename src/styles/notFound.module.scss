@@ -1,0 +1,20 @@
+@import './settings.scss';
+
+.notFound {
+    h1 {
+        font-size: $xlarge;
+        margin-bottom: 5rem;
+    }
+
+    p {
+        font-size: $small;
+    }
+
+    a {
+        color: $white;
+
+        &:hover {
+            color: $blue;
+        }
+    }
+}

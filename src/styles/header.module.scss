@@ -1,0 +1,112 @@
+@import "./settings.scss";
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  width: 100vw;
+  height: 10rem;
+  background: $black;
+  padding: 0 3rem;
+  z-index: 1000;
+  top: 0;
+}
+
+.burger {
+  width: 3rem;
+  height: 2.3rem;
+  z-index: 1001;
+  cursor: pointer;
+  div {
+    height: 0.3rem;
+    width: 3rem;
+    // background: $white;
+    margin-bottom: 1.7rem;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+  }
+
+  &:hover {
+    div {
+      background: $blue !important;
+    }
+  }
+}
+
+.burgerTop {
+  transform-origin: right top;
+}
+
+.burgerTop-closed {
+  background: $white;
+}
+
+.burgerTop-open {
+  transform: rotate(-45deg);
+  background: $black;
+}
+
+.burgerBottom {
+  transform-origin: right bottom;
+}
+
+.burgerBottom-closed {
+  background: $white;
+}
+
+.burgerBottom-open {
+  transform: rotate(45deg);
+  background: $black;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: $white;
+  margin: 0;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  padding: 15% 10% 0 0;
+
+  @media (max-width: $desktopBreakpoint) {
+    padding: 20rem 5rem 0 0;
+  }
+}
+
+.menu-open {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+.menu-Closed {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s, visibility 0s 0.4s;
+}
+
+.list {
+  margin: 0;
+  list-style: none;
+  font-family: $sans;
+  font-size: $large;
+  font-weight: $regular;
+  li {
+    margin: 0 0 2rem 0;
+
+    @media (max-width: $desktopBreakpoint) {
+      margin: 0 0 4rem 0;
+    }
+  }
+  a {
+    color: $black;
+    text-decoration: none;
+    transition-duration: 0.2s;
+    -webkit-transition-duration: 0.2s;
+  }
+}

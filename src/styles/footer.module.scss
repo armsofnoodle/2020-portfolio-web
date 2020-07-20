@@ -1,0 +1,26 @@
+@import './settings.scss';
+
+.footer {
+    margin: 10% 10% 5% 10%;
+    font-size: $xsmall;
+    display: flex;
+    align-items: center;
+    a {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin: 0 -1rem 0 5rem;
+        &:hover {
+            fill: $invert-blue;
+        }
+    }
+
+    svg {
+        filter: invert(1);
+        width: 100%;
+        height: 100%;
+    }
+
+    @media (max-width: $desktopBreakpoint) {
+        margin-bottom: 10%;
+    }
+}

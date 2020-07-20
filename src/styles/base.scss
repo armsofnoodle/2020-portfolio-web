@@ -1,0 +1,36 @@
+@import './settings.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    outline: none;
+    -ms-overflow-style: none;
+    /* IE 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+    background: $black;
+    color: $white;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    font-family: $sans;
+    overflow-x: hidden;
+}
+
+a {
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+    &:hover {
+        color: $blue;
+    }
+}
+

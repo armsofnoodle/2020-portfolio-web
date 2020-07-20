@@ -1,42 +1,44 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+// import PropTypes from "prop-types"
+import React, { useState } from "react"
+import headerStyles from "../styles/header.module.scss"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const Header = () => {
+  const [open, setOpen] = useState(false)
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+  const menuClicked = () => {
+    setOpen(!open)
+    console.log(open)
+  }
+
+  return (
+    <header className={headerStyles.header}>
+      <div className={headerStyles.burger} onClick={menuClicked}>
+        <div className={open ? `${headerStyles.burgerTop} ${headerStyles.burgerTopOpen}` : `${headerStyles.burgerTop} ${headerStyles.burgerTopClosed}`} />
+        <div className={open ? `${headerStyles.burgerBottom} ${headerStyles.burgerBottomOpen}` : `${headerStyles.burgerBottom} ${headerStyles.burgerBottomClosed}`} />
+      </div>
+      <div className={open ? `${headerStyles.menu} ${headerStyles.menuOpen}` : `${headerStyles.menu} ${headerStyles.menuClosed}`}>
+        
+      <ul className={headerStyles.list}>
+          <li>
+            <Link to="/">Me</Link>
+          </li>
+          <li>
+            <Link to="/work">Work</Link>
+          </li>
+        </ul>
+        
+      </div>
+    </header>
+  )
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+// Header.propTypes = {
+//   siteTitle: PropTypes.string,
+// }
+
+// Header.defaultProps = {
+//   siteTitle: ``,
+// }
 
 export default Header

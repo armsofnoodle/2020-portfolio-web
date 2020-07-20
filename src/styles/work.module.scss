@@ -1,0 +1,102 @@
+@import "./settings.scss";
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -4% 0 -4%;
+  li {
+    width: 42%;
+    margin: 0 4% 0 4%;
+    a {
+      text-decoration: none;
+      color: $white;
+    }
+    
+    img {
+      filter: saturate(0);
+      -webkit-filter: saturate(0);
+      transition: all 0.4s ease-in-out !important;
+      // transition-duration: 0.4s !important;
+      // -webkit-transition-duration: 0.4s !important;
+    }
+
+    &:hover {
+      img {
+        filter: saturate(1);
+        -webkit-filter: saturate(1);
+      }
+      div {
+        top: 0px;
+      }
+    }
+  }
+
+  @media (max-width: $desktopBreakpoint) {
+    flex-direction: column;
+    margin: 0;
+
+    li {
+      width: 100%;
+      margin: 0;
+
+      img {
+        filter: saturate(1);
+      }
+    }
+
+    
+  }
+}
+
+.image {
+  min-width: 100%;
+}
+
+.project-description {
+  position: relative;
+  background: $black;
+  padding: 1rem 0 2rem 0;
+  top: -20rem;
+  margin-bottom: -5rem;
+  z-index: -1;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  h2 {
+    font-size: $small;
+    font-weight: $medium;
+    margin: 1rem 0;
+  }
+
+  p {
+    font-size: $xsmall;
+  }
+
+  @media (max-width: $desktopBreakpoint) {
+    top: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+.subtitle {
+  color: $light-grey;
+  margin: 0;
+}
+
+.title {
+  font-size: $xxlarge;
+  padding: 5rem 0 0 0;
+  margin-bottom: 2rem;
+  @media (max-width: $desktopBreakpoint) {
+    padding: 0;
+  }
+}
+
+.page-subtitle {
+  font-size: $msmall;
+  margin-bottom: 5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid $white;
+}
